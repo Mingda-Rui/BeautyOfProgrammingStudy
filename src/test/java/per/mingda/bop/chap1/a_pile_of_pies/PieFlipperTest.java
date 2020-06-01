@@ -1,7 +1,6 @@
 package per.mingda.bop.chap1.a_pile_of_pies;
 
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
@@ -14,16 +13,47 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class PieFlipperTest {
 
-    static PieFlipper pf;
+    PieFlipper pf;
 
-    @BeforeAll
-    public static void init() {
-        pf = new PieFlipper();
-    }
+    @BeforeEach
+    public void setUp() {pf = new PieFlipper();}
 
-    @Disabled
+    @Test
     public void sortPiesTest() {
+        pf.setFlipCount(0);
+        List<Integer> testPies = Arrays.asList(4, 3, 2, 8, 9, 10, 3, 7, 1);
+        pf.sortPies(testPies);
+        int[] expect = new int[] {10, 9, 8, 7, 4, 3, 3, 2, 1};
+        assertArrayEquals(expect, toIntArray(testPies));
+        assertEquals(10, pf.getFlipCount());
 
+        pf.setFlipCount(0);
+        testPies = Arrays.asList(1, 2, 3, 4, 5);
+        pf.sortPies(testPies);
+        expect = new int[] {5, 4, 3, 2, 1};
+        assertArrayEquals(expect, toIntArray(testPies));
+        assertEquals(1, pf.getFlipCount());
+
+        pf.setFlipCount(0);
+        testPies = Arrays.asList(5, 4, 3, 2, 1);
+        pf.sortPies(testPies);
+        expect = new int[] {5, 4, 3, 2, 1};
+        assertArrayEquals(expect, toIntArray(testPies));
+        assertEquals(0, pf.getFlipCount());
+
+        pf.setFlipCount(0);
+        testPies = Arrays.asList(3, 3, 3);
+        pf.sortPies(testPies);
+        expect = new int[] {3, 3, 3};
+        assertArrayEquals(expect, toIntArray(testPies));
+        assertEquals(0, pf.getFlipCount());
+
+        pf.setFlipCount(0);
+        testPies = Collections.emptyList();
+        pf.sortPies(testPies);
+        expect = new int[] {};
+        assertArrayEquals(expect, toIntArray(testPies));
+        assertEquals(0, pf.getFlipCount());
     }
 
     @Test
