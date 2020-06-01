@@ -1,4 +1,4 @@
-package per.mingda.bop.chap1;
+package per.mingda.bop.chap1.chinese_chess;
 
 public class ChineseChess {
     // 0 1 2
