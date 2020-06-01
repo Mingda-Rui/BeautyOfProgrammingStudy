@@ -24,6 +24,10 @@ public class APileOfPies {
         this.pies = Arrays.stream(aPileOfPies).boxed().collect(Collectors.toList());
     }
 
+    public int[] getPies() {
+        return pies.stream().mapToInt(Integer::intValue).toArray();
+    }
+
     public void setPies(List<Integer> pies) {
         this.pies = pies;
     }
@@ -58,12 +62,12 @@ public class APileOfPies {
         this.pieFlipper.sortPies(this.pies);
     }
 
-    public int getFlipCounter() {
-        return this.pieFlipper.getFlipCounter();
+    public int getFlipCount() {
+        return this.pieFlipper.getFlipCount();
     }
 
-    protected void setFlipCounter(int num) {
-        this.pieFlipper.setFlipCounter(num);
+    protected void setFlipCount(int num) {
+        this.pieFlipper.setFlipCount(num);
     }
 
     public static void main(String ... args) {
@@ -73,6 +77,6 @@ public class APileOfPies {
         pies.sortPies();
         System.out.println("sorted pies: " + pies);
 
-        System.out.println(String.format("flipped: %d times", pies.getFlipCounter()));
+        System.out.println(String.format("flipped: %d times", pies.getFlipCount()));
     }
 }

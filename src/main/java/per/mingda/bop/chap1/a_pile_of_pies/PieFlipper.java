@@ -68,11 +68,11 @@ public class PieFlipper {
         this.flipCounter++;
     }
 
-    public int getFlipCounter() {
+    public int getFlipCount() {
         return this.flipCounter;
     }
 
-    public void setFlipCounter(int num) {
+    public void setFlipCount(int num) {
         this.flipCounter = num;
     }
 }

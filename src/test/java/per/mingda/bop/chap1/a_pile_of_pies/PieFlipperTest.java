@@ -55,133 +55,133 @@ public class PieFlipperTest {
 
     @Test
     public void flipPieToTopTest() {
-        pf.setFlipCounter(0);
+        pf.setFlipCount(0);
         List<Integer> testPies = Arrays.asList(1, 2, 3, 4, 5);
         pf.flipPiesToTop(testPies, 2);
         int[] expect = new int[] {1, 2, 5, 4, 3};
         assertArrayEquals(expect, toIntArray(testPies));
-        assertEquals(1, pf.getFlipCounter());
+        assertEquals(1, pf.getFlipCount());
 
-        pf.setFlipCounter(0);
+        pf.setFlipCount(0);
         testPies = Arrays.asList(1, 2, 3, 4, 5);
         pf.flipPiesToTop(testPies, 4);
         expect = new int[] {1, 2, 3, 4, 5};
         assertArrayEquals(expect, toIntArray(testPies));
-        assertEquals(0, pf.getFlipCounter());
+        assertEquals(0, pf.getFlipCount());
 
-        pf.setFlipCounter(0);
+        pf.setFlipCount(0);
         testPies = Collections.singletonList(1);
         pf.flipPiesToTop(testPies, 0);
         expect = new int[] {1};
         assertArrayEquals(expect, toIntArray(testPies));
-        assertEquals(0, pf.getFlipCounter());
+        assertEquals(0, pf.getFlipCount());
 
-        pf.setFlipCounter(0);
+        pf.setFlipCount(0);
         testPies = Collections.emptyList();
         pf.flipPiesToTop(testPies, 0);
         expect = new int[] {};
         assertArrayEquals(expect, toIntArray(testPies));
-        assertEquals(0, pf.getFlipCounter());
+        assertEquals(0, pf.getFlipCount());
     }
 
     @Test
     public void flipAllPiesTest() {
-        pf.setFlipCounter(0);
+        pf.setFlipCount(0);
         List<Integer> testPies = Arrays.asList(1, 2, 3, 4, 5, 6);
         pf.flipAllPies(testPies);
         int[] expect = new int[] {6, 5, 4, 3, 2, 1};
         assertArrayEquals(expect, toIntArray(testPies));
-        assertEquals(1, pf.getFlipCounter());
+        assertEquals(1, pf.getFlipCount());
 
-        pf.setFlipCounter(0);
+        pf.setFlipCount(0);
         testPies = Collections.singletonList(1);
         pf.flipAllPies(testPies);
         expect = new int[] {1};
         assertArrayEquals(expect, toIntArray(testPies));
-        assertEquals(0, pf.getFlipCounter());
+        assertEquals(0, pf.getFlipCount());
 
-        pf.setFlipCounter(0);
+        pf.setFlipCount(0);
         testPies = Collections.emptyList();
         pf.flipAllPies(testPies);
         expect = new int[] {};
         assertArrayEquals(expect, toIntArray(testPies));
-        assertEquals(0, pf.getFlipCounter());
+        assertEquals(0, pf.getFlipCount());
     }
 
     @Test
     public void flipPieToButtonTest() {
-        pf.setFlipCounter(0);
+        pf.setFlipCount(0);
         List<Integer> testPies = Arrays.asList(1, 2, 3, 4, 5, 6);
         pf.flipPieToButton(testPies, 2);
         int[] expect = new int[] {3, 4, 5, 6, 2, 1};
         assertArrayEquals(expect, toIntArray(testPies));
-        assertEquals(2, pf.getFlipCounter());
+        assertEquals(2, pf.getFlipCount());
 
-        pf.setFlipCounter(0);
+        pf.setFlipCount(0);
         testPies = Arrays.asList(1, 2, 3, 4, 5, 6);
         pf.flipPieToButton(testPies, 5);
         expect = new int[] {6, 5, 4, 3, 2, 1};
         assertArrayEquals(expect, toIntArray(testPies));
-        assertEquals(1, pf.getFlipCounter());
+        assertEquals(1, pf.getFlipCount());
 
-        pf.setFlipCounter(0);
+        pf.setFlipCount(0);
         testPies = Arrays.asList(1, 2, 3, 4, 5, 6);
         pf.flipPieToButton(testPies, 0);
         expect = new int[] {1, 2, 3, 4, 5, 6};
         assertArrayEquals(expect, toIntArray(testPies));
-        assertEquals(0, pf.getFlipCounter());
+        assertEquals(0, pf.getFlipCount());
     }
 
     @Test
     public void flipPiesTest() {
-        pf.setFlipCounter(0);
+        pf.setFlipCount(0);
         List<Integer> testPies = Arrays.asList(1, 2, 3, 4, 5, 6);
         pf.flipPies(testPies, 2, 5);
         int[] expect = new int[] {1, 2, 5, 4, 3, 6};
         assertArrayEquals(expect, toIntArray(testPies));
-        assertEquals(1, pf.getFlipCounter());
+        assertEquals(1, pf.getFlipCount());
 
-        pf.setFlipCounter(0);
+        pf.setFlipCount(0);
         testPies = Arrays.asList(1, 2, 3, 4, 5);
         pf.flipPies(testPies, 1, 5);
         expect = new int[] {1, 5, 4, 3, 2};
         assertArrayEquals(expect, toIntArray(testPies));
-        assertEquals(1, pf.getFlipCounter());
+        assertEquals(1, pf.getFlipCount());
 
-        pf.setFlipCounter(0);
+        pf.setFlipCount(0);
         testPies = Arrays.asList(1, 2, 3, 4, 5);
         pf.flipPies(testPies, 1, 2);
         expect = new int[] {1, 2, 3, 4, 5};
         assertArrayEquals(expect, toIntArray(testPies));
-        assertEquals(1, pf.getFlipCounter());
+        assertEquals(1, pf.getFlipCount());
 
-        pf.setFlipCounter(0);
+        pf.setFlipCount(0);
         testPies = Arrays.asList(1, 2, 3, 4, 5);
         pf.flipPies(testPies, 3, 3);
         expect = new int[] {1, 2, 3, 4, 5};
         assertArrayEquals(expect, toIntArray(testPies));
-        assertEquals(0, pf.getFlipCounter());
+        assertEquals(0, pf.getFlipCount());
 
-        pf.setFlipCounter(0);
+        pf.setFlipCount(0);
         testPies = Arrays.asList(1, 2, 3, 4, 5);
         pf.flipPies(testPies, 2, 10);
         expect = new int[] {1, 2, 5, 4, 3};
         assertArrayEquals(expect, toIntArray(testPies));
-        assertEquals(1, pf.getFlipCounter());
+        assertEquals(1, pf.getFlipCount());
 
-        pf.setFlipCounter(0);
+        pf.setFlipCount(0);
         testPies = Collections.singletonList(1);
         pf.flipPies(testPies, 0, 0);
         expect = new int[] {1};
         assertArrayEquals(expect, toIntArray(testPies));
-        assertEquals(0, pf.getFlipCounter());
+        assertEquals(0, pf.getFlipCount());
 
-        pf.setFlipCounter(0);
+        pf.setFlipCount(0);
         testPies = Collections.emptyList();
         pf.flipPies(testPies, 0, 0);
         expect = new int[] {};
         assertArrayEquals(expect, toIntArray(testPies));
-        assertEquals(0, pf.getFlipCounter());
+        assertEquals(0, pf.getFlipCount());
     }
 
     @Test
